@@ -14,6 +14,6 @@ public class RobotView extends DisplayableDecorator {
     public void display(Graphics g) {
         wrappedComponent.display(g);
         g.setColor(Color.RED);
-        g.fillOval(getX() * CellView.CELL_SIZE, getY() * CellView.CELL_SIZE, 10, 10);
+        g.fillOval(x() * CellView.CELL_SIZE, y() * CellView.CELL_SIZE, 10, 10);
     }
 }

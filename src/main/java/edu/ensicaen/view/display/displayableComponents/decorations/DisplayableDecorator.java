@@ -10,12 +10,12 @@ public abstract class DisplayableDecorator implements DisplayableComponent {
     }
 
     @Override
-    public int getX() {
-        return wrappedComponent.getX();
+    public int x() {
+        return wrappedComponent.x();
     }
 
     @Override
-    public int getY() {
-        return wrappedComponent.getY();
+    public int y() {
+        return wrappedComponent.y();
     }
 }

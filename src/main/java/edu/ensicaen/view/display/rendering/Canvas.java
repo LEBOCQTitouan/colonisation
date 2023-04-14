@@ -1,23 +1,36 @@
 package edu.ensicaen.view.display.rendering;
 
+import edu.ensicaen.view.display.displayableComponents.CellView;
 import edu.ensicaen.view.display.displayableComponents.DisplayableComponent;
 
 import javax.swing.*;
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.Semaphore;
 
-public class Canvas {
-    private final JPanel canvasDisplay;
+public class Canvas extends JPanel {
+    private final Semaphore displayableComponentsLock = new Semaphore(1);
+    private final List<DisplayableComponent> displayableComponents;
 
     public Canvas() {
-        canvasDisplay = new JPanel();
-        canvasDisplay.setSize(800, 800);
-        canvasDisplay.setBackground(java.awt.Color.RED);
+        this.displayableComponents = new ArrayList<>();
     }
 
-    public JPanel getCanvasDisplay() {
-        return canvasDisplay;
+    @Override
+    public void paintComponent(Graphics g) {
+        CellView.CELL_SIZE = Math.min(getWidth(), getHeight()) / 10;
+        while (!displayableComponentsLock.tryAcquire());
+        super.paintComponent(g);
+        for (DisplayableComponent displayableComponent : displayableComponents) {
+            displayableComponent.display(g);
+        }
+        displayableComponentsLock.release();
     }
 
-    public void draw(DisplayableComponent displayableComponent) {
-        displayableComponent.display(canvasDisplay.getGraphics());
+    public void addDisplayableComponent(DisplayableComponent displayableComponent) {
+        while (!displayableComponentsLock.tryAcquire());
+        displayableComponents.add(displayableComponent);
+        displayableComponentsLock.release();
     }
 }

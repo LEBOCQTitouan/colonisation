@@ -4,6 +4,6 @@ import java.awt.*;
 
 public interface DisplayableComponent {
     void display(Graphics g);
-    int getX();
-    int getY();
+    int x();
+    int y();
 }

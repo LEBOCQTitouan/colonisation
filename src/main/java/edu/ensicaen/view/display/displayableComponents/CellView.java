@@ -2,34 +2,18 @@ package edu.ensicaen.view.display.displayableComponents;
 
 import java.awt.*;
 
-public class CellView implements DisplayableComponent {
-    public static int CELL_SIZE = 10;
-    private final int x;
-    private final int y;
-
-    public CellView(int x, int y) {
-        this.x = x;
-        this.y = y;
-    }
+public record CellView(int x, int y) implements DisplayableComponent {
+    public static int CELL_SIZE = 1;
 
     @Override
     public void display(Graphics g) {
-        g.setColor(Color.BLACK);
-        g.fillRect(
-                x * CELL_SIZE,
-                y * CELL_SIZE,
-                CELL_SIZE,
-                CELL_SIZE
-        );
-    }
 
-    @Override
-    public int getX() {
-        return x;
-    }
+        int computedX = x * CELL_SIZE;
+        int computedY = y * CELL_SIZE;
 
-    @Override
-    public int getY() {
-        return y;
+        g.setColor(Color.GREEN);
+        g.fillRect(computedX, computedY, CELL_SIZE, CELL_SIZE);
+        g.setColor(Color.GRAY);
+        g.drawRect(computedX, computedY, CELL_SIZE, CELL_SIZE);
     }
 }

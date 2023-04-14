@@ -1,8 +1,7 @@
 package edu.ensicaen.view;
 
 import edu.ensicaen.presenter.SimulationPresenter;
-import edu.ensicaen.view.display.rendering.renderer.ConcreteRenderer;
-import edu.ensicaen.view.display.rendering.renderer.ConcreteRendererProxy;
+import edu.ensicaen.view.display.rendering.renderer.JPanelRenderer;
 import edu.ensicaen.view.display.rendering.renderer.Renderer;
 
 public class SimulationView {
@@ -10,7 +9,7 @@ public class SimulationView {
     private final Renderer concreteRenderer;
 
     public SimulationView() {
-        concreteRenderer = new ConcreteRendererProxy(new ConcreteRenderer());
+        concreteRenderer = new JPanelRenderer();
     }
 
     public void setSimulationPresenter(SimulationPresenter simulationPresenter) {

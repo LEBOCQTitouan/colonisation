@@ -14,6 +14,6 @@ public class ShockwaveView extends DisplayableDecorator {
     public void display(Graphics g) {
         wrappedComponent.display(g);
         g.setColor(new Color(0, 255, 255, 128)); // 50% transparent cyan
-        g.fillRect(getX() * CellView.CELL_SIZE, getY() * CellView.CELL_SIZE, 10, 10);
+        g.fillRect(x() * CellView.CELL_SIZE, y() * CellView.CELL_SIZE, 10, 10);
     }
 }
