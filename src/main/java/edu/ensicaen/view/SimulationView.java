@@ -1,5 +1,6 @@
 package edu.ensicaen.view;
 
+import edu.ensicaen.presenter.dataHandling.DataContainer;
 import edu.ensicaen.presenter.SimulationPresenter;
 import edu.ensicaen.view.display.rendering.renderer.JPanelRenderer;
 import edu.ensicaen.view.display.rendering.renderer.Renderer;
@@ -44,6 +45,10 @@ public class SimulationView {
      * @param y the y coordinate of the cell to update
      */
     public void askUpdate(int x, int y) {
+        // TODO
+    }
+
+    public void askStateUpdate(DataContainer dataContainer) {
         // TODO
     }
 

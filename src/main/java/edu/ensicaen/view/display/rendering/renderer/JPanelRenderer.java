@@ -1,5 +1,6 @@
 package edu.ensicaen.view.display.rendering.renderer;
 
+import edu.ensicaen.presenter.dataHandling.DataContainer;
 import edu.ensicaen.presenter.SimulationPresenter;
 import edu.ensicaen.view.display.displayableComponents.CellView;
 import edu.ensicaen.view.display.displayableComponents.DisplayableComponent;
@@ -85,6 +86,12 @@ public class JPanelRenderer implements Renderer {
     public void render() {
         canvas.repaint();
     }
+
+    @Override
+    public void updateDataDisplay(DataContainer dataContainer) {
+        simulationDataHolder.handleDataContainer(dataContainer);
+    }
+
     @Override
     public void renderDisplayableComponent(DisplayableComponent displayableComponent) {
         canvas.addDisplayableComponent(displayableComponent);

@@ -2,6 +2,7 @@ package edu.ensicaen;
 
 import edu.ensicaen.model.Sequencer;
 import edu.ensicaen.presenter.SimulationPresenter;
+import edu.ensicaen.presenter.dataHandling.DataContainer;
 import edu.ensicaen.view.SimulationView;
 
 public class Main {
@@ -12,5 +13,6 @@ public class Main {
 
         simulationView.displayGUI();
         simulationView.updateCanvas();
+        simulationView.askStateUpdate(new DataContainer(0));
     }
 }
