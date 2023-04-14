@@ -1,5 +1,7 @@
 package edu.ensicaen.view.display;
 
+import edu.ensicaen.view.display.displayableComponents.DisplayableComponent;
+
 import javax.swing.*;
 
 public class Canvas {
@@ -13,5 +15,9 @@ public class Canvas {
 
     public JPanel getCanvasDisplay() {
         return canvasDisplay;
+    }
+
+    public void draw(DisplayableComponent displayableComponent) {
+        displayableComponent.display(canvasDisplay.getGraphics());
     }
 }

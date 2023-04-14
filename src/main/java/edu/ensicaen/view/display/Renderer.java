@@ -1,8 +1,10 @@
 package edu.ensicaen.view.display;
 
 import edu.ensicaen.presenter.SimulationPresenter;
+import edu.ensicaen.view.display.displayableComponents.DisplayableComponent;
 
 import javax.swing.*;
+import java.util.List;
 
 public class Renderer {
     private final JFrame frame;
@@ -31,5 +33,11 @@ public class Renderer {
         stepButton.addActionListener(
                 e -> simulationPresenter.makeStep(1)
         );
+    }
+
+    public void render(List<DisplayableComponent> displayableComponents) {
+        for (DisplayableComponent displayableComponent : displayableComponents) {
+            canvas.draw(displayableComponent);
+        }
     }
 }
