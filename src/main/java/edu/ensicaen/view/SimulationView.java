@@ -4,28 +4,53 @@ import edu.ensicaen.presenter.SimulationPresenter;
 import edu.ensicaen.view.display.rendering.renderer.JPanelRenderer;
 import edu.ensicaen.view.display.rendering.renderer.Renderer;
 
+/**
+ * The view of the simulation. It will display the simulation and transmit the user input to the presenter.
+ */
 public class SimulationView {
+    /**
+     * Based on the MVP. The presenter is the one that will handle the user input and the view will be updated by that
+     * same presenter.
+     */
     private SimulationPresenter simulationPresenter;
-    private final Renderer concreteRenderer;
+    /**
+     * The renderer that will display the simulation.
+     */
+    private final Renderer renderer;
 
     public SimulationView() {
-        concreteRenderer = new JPanelRenderer();
+        renderer = new JPanelRenderer();
     }
 
+    /**
+     * Sets the simulation presenter.
+     * @param simulationPresenter the simulation presenter
+     */
     public void setSimulationPresenter(SimulationPresenter simulationPresenter) {
         this.simulationPresenter = simulationPresenter;
-        concreteRenderer.setStepButtonAction(simulationPresenter);
+        renderer.setStepButtonAction(simulationPresenter);
     }
 
+    /**
+     * Makes the GUI visible to the user.
+     */
     public void displayGUI() {
-        concreteRenderer.displayFrame();
+        renderer.displayFrame();
     }
 
+    /**
+     * Asks the presenter to update the simulation.
+     * @param x the x coordinate of the cell to update
+     * @param y the y coordinate of the cell to update
+     */
     public void askUpdate(int x, int y) {
         // TODO
     }
 
+    /**
+     * Updates the canvas.
+     */
     public void updateCanvas() {
-        concreteRenderer.render();
+        renderer.render();
     }
 }

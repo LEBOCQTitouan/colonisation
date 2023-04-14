@@ -9,8 +9,17 @@ import javax.swing.*;
 import java.awt.*;
 
 public class JPanelRenderer implements Renderer {
+    /**
+     * The frame that will hold the simulation display.
+     */
     private final JFrame frame;
+    /**
+     * The button that will trigger the simulation to make a step.
+     */
     private final JButton stepButton;
+    /**
+     * The canvas that will display the simulation.
+     */
     private final Canvas canvas;
 
     public JPanelRenderer() {
@@ -41,6 +50,9 @@ public class JPanelRenderer implements Renderer {
         initDummyDisplayableComponents();
     }
 
+    /**
+     * TODO remove
+     */
     private void initDummyDisplayableComponents() {
         // TODO remove
         CellView.CELL_SIZE = 80;

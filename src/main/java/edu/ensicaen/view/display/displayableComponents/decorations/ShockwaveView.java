@@ -5,6 +5,9 @@ import edu.ensicaen.view.display.displayableComponents.DisplayableComponent;
 
 import java.awt.*;
 
+/**
+ * Decorator for the Cell. This class is used to display the shockwave on the cell.
+ */
 public class ShockwaveView extends DisplayableDecorator {
     public ShockwaveView(DisplayableComponent wrappedComponent) {
         super(wrappedComponent);
