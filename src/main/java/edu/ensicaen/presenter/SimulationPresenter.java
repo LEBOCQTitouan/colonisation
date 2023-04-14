@@ -12,4 +12,10 @@ public class SimulationPresenter {
         this.simulationView = simulationView;
         this.simulationView.setSimulationPresenter(this);
     }
+
+    public void askStep(int n) {
+        for (int i = 0; i < n; i++) {
+            sequencer.step();
+        }
+    }
 }

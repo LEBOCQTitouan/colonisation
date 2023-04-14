@@ -12,4 +12,8 @@ public class SimualtionView {
     public void setSimulationPresenter(SimulationPresenter simulationPresenter) {
         this.simulationPresenter = simulationPresenter;
     }
+
+    public void askStep(int n) {
+        simulationPresenter.askStep(n);
+    }
 }
