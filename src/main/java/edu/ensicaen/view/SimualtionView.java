@@ -13,7 +13,11 @@ public class SimualtionView {
         this.simulationPresenter = simulationPresenter;
     }
 
-    public void askStep(int n) {
-        simulationPresenter.askStep(n);
+    public void askModelStep(int n) {
+        simulationPresenter.makeStep(n);
+    }
+
+    public void askUpdate() {
+        simulationPresenter.updateView();
     }
 }
