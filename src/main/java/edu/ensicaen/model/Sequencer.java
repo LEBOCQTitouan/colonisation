@@ -12,7 +12,8 @@ public class Sequencer {
     }
 
     public void step() {
-        // TODO
+        // TODO update entities
+        simulationPresenter.updateView();
 
     }
 

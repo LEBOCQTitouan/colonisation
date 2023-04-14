@@ -9,5 +9,7 @@ public class Main {
         Sequencer sequencer = new Sequencer();
         SimualtionView simulationView = new SimualtionView();
         SimulationPresenter simulationPresenter = new SimulationPresenter(sequencer, simulationView);
+
+        simulationView.displayGUI();
     }
 }

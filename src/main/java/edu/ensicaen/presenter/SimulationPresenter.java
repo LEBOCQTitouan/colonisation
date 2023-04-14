@@ -15,6 +15,7 @@ public class SimulationPresenter {
     }
 
     public void makeStep(int n) {
+        System.out.printf("1 - Presenter asks model to make %d steps%n", n);
         for (int i = 0; i < n; i++) {
             sequencer.step();
         }
@@ -22,6 +23,7 @@ public class SimulationPresenter {
 
     public void updateView() {
         // TODO update view components
+        System.out.println("2 - View updated");
         simulationView.askUpdate();
     }
 }

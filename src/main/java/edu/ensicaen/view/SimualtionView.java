@@ -1,23 +1,32 @@
 package edu.ensicaen.view;
 
 import edu.ensicaen.presenter.SimulationPresenter;
+import edu.ensicaen.view.display.Renderer;
 
 public class SimualtionView {
     private SimulationPresenter simulationPresenter;
+    private final Renderer renderer;
 
-    public SimulationPresenter getSimulationPresenter() {
-        return simulationPresenter;
+    public SimualtionView() {
+        renderer = new Renderer();
     }
 
     public void setSimulationPresenter(SimulationPresenter simulationPresenter) {
         this.simulationPresenter = simulationPresenter;
+        renderer.setStepButtonAction(simulationPresenter);
     }
 
     public void askModelStep(int n) {
-        simulationPresenter.makeStep(n);
+        if (simulationPresenter != null) {
+            simulationPresenter.makeStep(n);
+        }
     }
 
     public void askUpdate() {
-        simulationPresenter.updateView();
+        // TODO
+    }
+
+    public void displayGUI() {
+        renderer.display();
     }
 }
