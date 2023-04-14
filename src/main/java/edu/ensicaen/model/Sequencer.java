@@ -13,6 +13,7 @@ public class Sequencer {
 
     public void step() {
         // TODO update entities
+        // TODO compute update coordinates
         simulationPresenter.updateView();
 
     }

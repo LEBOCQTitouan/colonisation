@@ -22,7 +22,7 @@ public class SimualtionView {
         }
     }
 
-    public void askUpdate() {
+    public void askUpdate(int x, int y) {
         // TODO
     }
 

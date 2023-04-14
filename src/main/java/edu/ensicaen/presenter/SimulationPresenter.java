@@ -22,8 +22,9 @@ public class SimulationPresenter {
     }
 
     public void updateView() {
-        // TODO update view components
         System.out.println("2 - View updated");
-        simulationView.askUpdate();
+        // TODO compute update coordinates
+        // TODO for coordinates update view component
+            // simulationView.askUpdate(x,y);
     }
 }
