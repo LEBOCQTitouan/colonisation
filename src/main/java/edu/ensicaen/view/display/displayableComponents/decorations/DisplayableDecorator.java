@@ -1,4 +1,6 @@
-package edu.ensicaen.view.display.displayableComponents;
+package edu.ensicaen.view.display.displayableComponents.decorations;
+
+import edu.ensicaen.view.display.displayableComponents.DisplayableComponent;
 
 public abstract class DisplayableDecorator implements DisplayableComponent {
     protected DisplayableComponent wrappedComponent;

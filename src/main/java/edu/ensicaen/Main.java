@@ -2,14 +2,15 @@ package edu.ensicaen;
 
 import edu.ensicaen.model.Sequencer;
 import edu.ensicaen.presenter.SimulationPresenter;
-import edu.ensicaen.view.SimualtionView;
+import edu.ensicaen.view.SimulationView;
 
 public class Main {
     public static void main(String[] args) {
         Sequencer sequencer = new Sequencer();
-        SimualtionView simulationView = new SimualtionView();
+        SimulationView simulationView = new SimulationView();
         SimulationPresenter simulationPresenter = new SimulationPresenter(sequencer, simulationView);
 
         simulationView.displayGUI();
+        simulationView.updateCanvas();
     }
 }

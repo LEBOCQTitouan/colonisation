@@ -15,7 +15,12 @@ public class CellView implements DisplayableComponent {
     @Override
     public void display(Graphics g) {
         g.setColor(Color.BLACK);
-        g.fillRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+        g.fillRect(
+                x * CELL_SIZE,
+                y * CELL_SIZE,
+                CELL_SIZE,
+                CELL_SIZE
+        );
     }
 
     @Override

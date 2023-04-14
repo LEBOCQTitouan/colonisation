@@ -1,4 +1,7 @@
-package edu.ensicaen.view.display.displayableComponents;
+package edu.ensicaen.view.display.displayableComponents.decorations;
+
+import edu.ensicaen.view.display.displayableComponents.CellView;
+import edu.ensicaen.view.display.displayableComponents.DisplayableComponent;
 
 import java.awt.*;
 

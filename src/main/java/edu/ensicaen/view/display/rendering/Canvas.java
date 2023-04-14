@@ -1,4 +1,4 @@
-package edu.ensicaen.view.display;
+package edu.ensicaen.view.display.rendering;
 
 import edu.ensicaen.view.display.displayableComponents.DisplayableComponent;
 
