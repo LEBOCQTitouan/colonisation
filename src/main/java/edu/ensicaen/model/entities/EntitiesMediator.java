@@ -1,6 +1,7 @@
 package edu.ensicaen.model.entities;
 
 import edu.ensicaen.model.entities.planet.Planet;
+import edu.ensicaen.model.entities.planet.cells.PlanetCell;
 import edu.ensicaen.model.entities.robots.Robot;
 import edu.ensicaen.model.entities.shockwaves.Shockwave;
 
@@ -9,7 +10,7 @@ import java.util.List;
 
 public class EntitiesMediator {
     /**
-     * The @Planet of the simulation
+     * The Planet of the simulation
      */
     private final Planet planet;
     /**
@@ -26,10 +27,11 @@ public class EntitiesMediator {
         this.shockwaves = new ArrayList<>();
         this.robots = generateRobots();
 
+        int startingX = this.planet.getCells().length / 2;
+        int startingY = this.planet.getCells()[0].length / 2;
+        PlanetCell startingCell = this.planet.getCells()[startingX][startingY];
         for (Robot robot : this.robots) {
-            this.planet
-                    .getCells()[this.planet.getCells().length / 2][this.planet.getCells().length / 2]
-                    .addRobot(robot);
+            startingCell.addRobot(robot);
         }
     }
 
@@ -39,7 +41,7 @@ public class EntitiesMediator {
      */
     private List<Robot> generateRobots() {
         ArrayList<Robot> generatedRobots = new ArrayList<>();
-        // TODO
+        generatedRobots.add(new Robot());
         return generatedRobots;
     }
 }

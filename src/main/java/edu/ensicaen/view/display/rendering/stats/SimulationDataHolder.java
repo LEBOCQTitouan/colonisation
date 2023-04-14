@@ -3,10 +3,10 @@ package edu.ensicaen.view.display.rendering.stats;
 import javax.swing.*;
 import java.awt.*;
 
-public class StatHolder extends JPanel {
+public class SimulationDataHolder extends JPanel {
     private final DataHolder nbOfIterations;
 
-    public StatHolder(LayoutManager layout, boolean isDoubleBuffered) {
+    public SimulationDataHolder(LayoutManager layout, boolean isDoubleBuffered) {
         super(layout, isDoubleBuffered);
         this.setLayout(new GridBagLayout());
 
@@ -18,7 +18,7 @@ public class StatHolder extends JPanel {
         this.add(nbOfIterations, constraints);
     }
 
-    public StatHolder(LayoutManager layout) {
+    public SimulationDataHolder(LayoutManager layout) {
         super(layout);
         this.setLayout(new GridBagLayout());
 
@@ -30,7 +30,7 @@ public class StatHolder extends JPanel {
         this.add(nbOfIterations, constraints);
     }
 
-    public StatHolder(boolean isDoubleBuffered) {
+    public SimulationDataHolder(boolean isDoubleBuffered) {
         super(isDoubleBuffered);
         this.setLayout(new GridBagLayout());
 
@@ -42,7 +42,7 @@ public class StatHolder extends JPanel {
         this.add(nbOfIterations, constraints);
     }
 
-    public StatHolder() {
+    public SimulationDataHolder() {
         this.setLayout(new GridBagLayout());
 
         this.nbOfIterations = new DataHolder("Nb of iterations", 0);

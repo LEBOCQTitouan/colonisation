@@ -4,6 +4,9 @@ import edu.ensicaen.model.entities.planet.cells.PlanetCell;
 import edu.ensicaen.model.entities.planet.cells.PlanetCellType;
 
 public class Planet {
+    /**
+     * The cells of the planet
+     */
     private final PlanetCell[][] cells;
 
     public Planet() {
@@ -15,6 +18,10 @@ public class Planet {
         }
     }
 
+    /**
+     * Get the cells of the planet
+     * @return the cells
+     */
     public PlanetCell[][] getCells() {
         return cells;
     }

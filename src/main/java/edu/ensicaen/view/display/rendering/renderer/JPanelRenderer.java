@@ -4,7 +4,7 @@ import edu.ensicaen.presenter.SimulationPresenter;
 import edu.ensicaen.view.display.displayableComponents.CellView;
 import edu.ensicaen.view.display.displayableComponents.DisplayableComponent;
 import edu.ensicaen.view.display.rendering.Canvas;
-import edu.ensicaen.view.display.rendering.stats.StatHolder;
+import edu.ensicaen.view.display.rendering.stats.SimulationDataHolder;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,7 +22,7 @@ public class JPanelRenderer implements Renderer {
      * The canvas that will display the simulation.
      */
     private final Canvas canvas;
-    private final StatHolder statHolder;
+    private final SimulationDataHolder simulationDataHolder;
 
     public JPanelRenderer() {
         frame = new JFrame();
@@ -39,13 +39,13 @@ public class JPanelRenderer implements Renderer {
         canvas.setBackground(Color.RED);
         stepButton = new JButton("Step");
         stepButton.setPreferredSize(new Dimension(800, 30));
-        statHolder = new StatHolder();
-        statHolder.setPreferredSize(new Dimension(800, 50));
+        simulationDataHolder = new SimulationDataHolder();
+        simulationDataHolder.setPreferredSize(new Dimension(800, 50));
 
         constraints.gridx = 0;
         constraints.gridy = 0;
         constraints.gridwidth = 2;
-        frame.add(statHolder, constraints);
+        frame.add(simulationDataHolder, constraints);
         constraints.gridx = 0;
         constraints.gridy = 1;
         frame.add(canvas, constraints);
